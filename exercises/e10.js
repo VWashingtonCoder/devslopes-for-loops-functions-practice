@@ -5,7 +5,12 @@
 
 export function getClientsWithLetterInName(array, letter) {
   // Your code goes here...
-
+  const clientsWithLetter = [];
+  for (let client of array) {
+    const { name } = client;
+    if (name.includes(letter)) clientsWithLetter.push(name);
+  }
+  return clientsWithLetter;
 }
 
 // === TEST YOURSELF ===

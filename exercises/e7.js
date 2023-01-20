@@ -5,7 +5,16 @@
 
 export function getClientWithLeastBalance(array) {
   // Your code goes here...
-
+  let minId = 0;
+  let minBalance = undefined;
+  for (let account of array) {
+    const { id, balance } = account;
+    if (minBalance === undefined || (balance < minBalance && balance > 0)) {
+      minBalance = balance;
+      minId = id;
+    }
+  }
+  return [array[minId - 1]];
 }
 
 // === TEST YOURSELF ===
