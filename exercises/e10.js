@@ -9,9 +9,13 @@ export function getClientsWithLetterInName(array, letter) {
   const lowerCaseSearchLetter = letter.toLowerCase();
   for (let client of array) {
     const { name } = client;
-    const lowerCaseName = name.toLowerCase();
-    if (lowerCaseName.includes(lowerCaseSearchLetter))
-      clientsWithLetter.push(name);
+
+    for (let nameLetter of name) {
+      if (nameLetter.toLowerCase() === letter.toLowerCase()) {
+        clientsWithLetter.push(name);
+        break;
+      }
+    }
   }
   return clientsWithLetter;
 }
