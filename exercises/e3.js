@@ -5,10 +5,13 @@
 
 export function getAverage(array) {
   // Your code goes here...
-
+  const length = array.length;
+  let sum = 0;
+  for(let num of array){
+    sum = sum + num;
+  }
+   return sum/length;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-3"
